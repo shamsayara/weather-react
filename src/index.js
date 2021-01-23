@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./App.css";
-import Weather from "./Weather";
+import Apps from "./Apps.js";
 import Footer from "./Footer";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <header className="background">
         <div className="big-image">
           <div className="overlay">
-            <Weather defaultcity="London" />
+            <Apps defaultcity="London" />
           </div>
         </div>
         <Footer />
