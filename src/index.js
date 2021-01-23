@@ -12,7 +12,7 @@ function App() {
       <header className="background">
         <div className="big-image">
           <div className="overlay">
-            <Weather />
+            <Weather defaultcity="London" />
           </div>
         </div>
         <Footer />

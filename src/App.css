@@ -71,14 +71,14 @@ small {
 }
 
 .big-image {
-  height: 120vh;
-  width: 100vw;
+  height: 90vh;
+  width: 80vw;
   display: block;
   margin: 0 auto;
   border-radius: 5px;
   position: relative;
   background-size: cover;
-  background-position: 50% 50%;
+  background-position: 150% 50%;
   background-image: url("https://images.unsplash.com/photo-1594613583881-fa9da07cafa2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
 }
 
