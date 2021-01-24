@@ -6,7 +6,6 @@ import WeatherForecast from "./WeatherForecast.js";
 export default function Apps(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-  const [country, setCountry] = useState(props.defaultCountry);
 
   function handleResponse(response) {
     setWeatherData({
@@ -21,7 +20,6 @@ export default function Apps(props) {
       time: "10:00",
       lat: response.data.coord.lat,
       lon: response.data.coord.lon,
-      country: "GB",
     });
   }
   function search() {
@@ -33,7 +31,7 @@ export default function Apps(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    search(city);
+    search();
   }
 
   function updateCity(event) {

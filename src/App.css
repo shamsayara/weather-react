@@ -5,7 +5,7 @@ body {
 form {
   text-align: left;
   margin-top: 20px;
-  margin-left: 30px;
+  margin-left: 10px;
 }
 h1,
 h2,
@@ -120,15 +120,4 @@ a {
 
 .openSource {
   color: blue;
-}
-.rowweatherforecast {
-  color: white;
-  font-family: "Roboto", sans-serif;
-  margin: 40px 200px 40px 200px;
-  border: 1px solid salmon;
-  background: #8fa1a4;
-  border-radius: 5px;
-  padding-left: 80px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }

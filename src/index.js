@@ -12,7 +12,7 @@ function App() {
       <header className="background">
         <div className="big-image">
           <div className="overlay">
-            <Apps defaultCity="London" defaultCountry="GB" />
+            <Apps defaultCity="London" />
           </div>
         </div>
         <Footer />

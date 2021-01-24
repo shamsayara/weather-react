@@ -7,7 +7,6 @@ export default function Weather(props) {
   return (
     <div className="WeatherInfo">
       <h1 className="text-capitalize">{props.data.city}</h1>
-      <h2>{props.data.country}</h2>
       <h3>
         <FormattedDate date={props.data.date} />
       </h3>

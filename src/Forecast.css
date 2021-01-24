@@ -1,8 +1,10 @@
-.mainIcon {
-  font-size: 10px;
-}
-
 .WeatherForecast canvas {
   display: block;
-  margin: 5px, auto;
+  margin: 10px, auto;
+  width: 40;
+  height: 40;
+}
+
+.col {
+  margin: 50px auto;
 }
