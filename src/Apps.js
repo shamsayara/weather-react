@@ -16,7 +16,7 @@ export default function Apps(props) {
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       icon: response.data.weather[0].icon,
-      date: new Date(response.data.dt * 1000),
+      date: new Date((response.data.dt + response.data.timezone) * 1000),
       time: "10:00",
       lat: response.data.coord.lat,
       lon: response.data.coord.lon,
