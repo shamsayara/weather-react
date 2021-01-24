@@ -5,6 +5,8 @@ import Weather from "./Weather.js";
 export default function Apps(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const [country, setCountry] = useState(props.defaultCountry);
+
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -16,10 +18,12 @@ export default function Apps(props) {
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
       time: "10:00",
+      lat: response.data.coord.lat,
+      lon: response.data.coord.lon,
       country: "GB",
     });
   }
-  function searchCity() {
+  function search() {
     const apiKey = "d7ef075e23ceff7dd7b77b4367b2add8";
     const units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
@@ -28,11 +32,24 @@ export default function Apps(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    searchCity();
+    search(city);
   }
 
   function updateCity(event) {
     setCity(event.target.value);
+  }
+
+  function getCurrentLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(current);
+  }
+
+  function current(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    let apiKey = "d7ef075e23ceff7dd7b77b4367b2add8";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   if (weatherData.ready) {
@@ -50,7 +67,7 @@ export default function Apps(props) {
                 <input type="Submit" value="Search" />
               </form>
               <div className="col-3">
-                <button>Current Location</button>
+                <button onClick={getCurrentLocation}>Current Location</button>
               </div>
             </div>
           </div>
@@ -59,7 +76,7 @@ export default function Apps(props) {
       </div>
     );
   } else {
-    searchCity();
+    search();
     return "Loading...";
   }
 }
