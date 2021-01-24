@@ -10,7 +10,7 @@ form {
 h1,
 h2,
 h3,
-h4 {
+.WeatherTemperature {
   padding: 0px 0px 10px 0px;
 }
 
@@ -105,13 +105,21 @@ small {
   padding-top: 30px;
 }
 
-.units {
+.WeatherTemperature {
   color: white;
   font-family: "Roboto", sans-serif;
-  text-decoration: none;
+  font-size: 40px;
 }
-.units:hover {
+a {
+  text-decoration: none;
+  color: white;
+}
+.unit:hover {
   color: salmon;
+}
+
+.openSource {
+  color: blue;
 }
 .rowweatherforecast {
   color: white;
